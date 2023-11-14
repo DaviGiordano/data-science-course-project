@@ -9,6 +9,8 @@ matplotlib = "*"
 scikit-learn = "*"
 numpy = "*"
 pyqt5 = "*"
+mechanicalsoup = "*"
+prompt-toolkit = "==1.0.14"
 
 [dev-packages]
 
