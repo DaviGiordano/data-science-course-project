@@ -39,6 +39,12 @@ if __name__ == "__main__":
         "class_pos_covid.csv"
     )
 
+    download_and_extract(
+        browser,
+        "https://fenix.tecnico.ulisboa.pt/downloadFile/2815368242404010/class_credit_score.csv.zip",
+        "class_credit_score.csv"
+    )
+
 
 
 
