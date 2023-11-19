@@ -12,6 +12,7 @@ pyqt5 = "*"
 mechanicalsoup = "*"
 ipykernel = "*"
 ipympl = "*"
+tqdm = "*"
 
 [dev-packages]
 
