@@ -11,6 +11,7 @@ numpy = "*"
 pyqt5 = "*"
 mechanicalsoup = "*"
 ipykernel = "*"
+ipympl = "*"
 
 [dev-packages]
 
