@@ -13,6 +13,7 @@ mechanicalsoup = "*"
 ipykernel = "*"
 ipympl = "*"
 tqdm = "*"
+seaborn = "*"
 
 [dev-packages]
 
