@@ -1,0 +1,50 @@
+{
+  "numeric": [
+    "HeightInMeters",
+    "WeightInKilograms",
+    "BMI"
+  ],
+  "binary": [
+    "Sex",
+    "PhysicalActivities",
+    "HadHeartAttack",
+    "HadAngina",
+    "HadStroke",
+    "HadAsthma",
+    "HadSkinCancer",
+    "HadCOPD",
+    "HadDepressiveDisorder",
+    "HadKidneyDisease",
+    "HadArthritis",
+    "DeafOrHardOfHearing",
+    "BlindOrVisionDifficulty",
+    "DifficultyConcentrating",
+    "DifficultyWalking",
+    "DifficultyDressingBathing",
+    "DifficultyErrands",
+    "ChestScan",
+    "AlcoholDrinkers",
+    "HIVTesting",
+    "FluVaxLast12",
+    "PneumoVaxEver",
+    "HighRiskLastYear",
+    "CovidPos"
+  ],
+  "date": [],
+  "symbolic": [
+    "State",
+    "GeneralHealth",
+    "PhysicalHealthDays",
+    "MentalHealthDays",
+    "LastCheckupTime",
+    "SleepHours",
+    "RemovedTeeth",
+    "HadDiabetes",
+    "SmokerStatus",
+    "ECigaretteUsage",
+    "RaceEthnicityCategory",
+    "AgeCategory",
+    "TetanusLast10Tdap"
+
+  ]
+}

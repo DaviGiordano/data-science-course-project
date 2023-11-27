@@ -1,0 +1,43 @@
+{
+  "numeric": [
+    "ID",
+    "Customer_ID",
+    "Name",
+    "Age",
+    "SSN",
+    "Annual_Income",
+    "Monthly_Inhand_Salary",
+    "Num_Bank_Accounts",
+    "Num_Credit_Card",
+    "Interest_Rate",
+    "NumofLoan",
+    "Delay_from_due_date",
+    "NumofDelayedPayment",
+    "ChangedCreditLimit",
+    "NumCreditInquiries",
+    "OutstandingDebt",
+    "CreditUtilizationRatio",
+    "TotalEMIpermonth",
+    "Amountinvestedmonthly",
+    "MonthlyBalance",
+    "sin_month",
+    "cos_month"
+  ],
+  "binary": ["Payment_of_Min_Amount", "Credit_Score", "spent"],
+  "date": [],
+  "symbolic": [
+    "Occupation",
+    "PaydayLoan",
+    "AutoLoan",
+    "Credit-BuilderLoan",
+    "StudentLoan",
+    "NotSpecified",
+    "MortgageLoan",
+    "HomeEquityLoan",
+    "DebtConsolidationLoan",
+    "PersonalLoan",
+    "CreditMix",
+    "Credit_History_Age",
+    "value_payments"
+  ]
+}
