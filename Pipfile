@@ -15,6 +15,7 @@ ipympl = "*"
 tqdm = "*"
 seaborn = "*"
 imblearn = "*"
+statsmodels = "*"
 
 [dev-packages]
 
