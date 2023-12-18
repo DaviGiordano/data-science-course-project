@@ -113,7 +113,7 @@ def plot_line_chart(
         ax = gca()
     ax = set_chart_labels(ax=ax, title=title, xlabel=xlabel, ylabel=ylabel)
     ax = set_chart_xticks(xvalues, ax, percentage=percentage)
-    if any(y < 0 for y in yvalues) and percentage:
+    if percentage and any(y < 0 for y in yvalues):
             ax.set_ylim(-1.0, 1.0)
     ax.plot(xvalues, yvalues, c=LINE_COLOR, label=name)
     if show_stdev:
