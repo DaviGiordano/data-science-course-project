@@ -1,0 +1,9 @@
+timeseries_traffic_forecast_aggregation_S_Total
+Mean Squared Error: 3407.731832573262
+R-squared: -0.00028654562821195384
+timeseries_traffic_forecast_aggregation_H_Total
+Mean Squared Error: 46929.63828008929
+R-squared: -1.7771887344419923e-05
+timeseries_traffic_forecast_aggregation_D_Total
+Mean Squared Error: 29058.268812028313
+R-squared: -8.866146782795454
