@@ -7,7 +7,6 @@ from itertools import product
 from datetime import datetime
 from numbers import Number
 from numpy import arange, ndarray, set_printoptions
-import pandas as pd
 from matplotlib.font_manager import FontProperties
 from matplotlib.axes import Axes
 from matplotlib.pyplot import gca, gcf, savefig, subplots
@@ -21,7 +20,6 @@ from sklearn.metrics import accuracy_score, recall_score, precision_score, roc_a
 from sklearn.metrics import confusion_matrix, RocCurveDisplay
 from sklearn.naive_bayes import GaussianNB, MultinomialNB, BernoulliNB
 from sklearn.neighbors import KNeighborsClassifier
-from sklearn.model_selection import train_test_split
 
 from config import ACTIVE_COLORS, LINE_COLOR, FILL_COLOR, cmap_blues
 
@@ -119,6 +117,22 @@ def plot_multiline_chart(xvalues: list, yvalues: dict, ax: Axes=None, title: str
         legend.append(name)
     ax.legend(legend)
     return ax
+
+def plot_and_save_multiline_chart(xvalues: list, yvalues: dict, ax: Axes = None, title: str = '', xlabel: str = '',
+                         ylabel: str = '', percentage: bool = False, save_path: str = None):
+    if ax is None:
+        ax = gca()
+    ax = set_chart_labels(ax=ax, title=title, xlabel=xlabel, ylabel=ylabel)
+    ax = set_chart_xticks(xvalues, ax=ax, percentage=percentage)
+    legend: list = []
+    for name, y in yvalues.items():
+        ax.plot(xvalues, y)
+        legend.append(name)
+    ax.legend(legend)
+    if save_path:
+        savefig(save_path)
+    return ax
+
 
 def plot_multibar_chart(group_labels: list, yvalues: dict, ax: Axes=None, title: str='', 
                         xlabel: str='', ylabel: str='', percentage: bool=False):
@@ -332,21 +346,6 @@ CLASS_EVAL_METRICS = {
     'f1': f1_score,
 }
 
-def split_data_set(dataset_path, target):
-    # Load the data
-    data = pd.read_csv(dataset_path)
-
-    # Assuming 'class_label' is the column with class labels
-    y = data.pop(target).values
-    x = data.values
-    labels = unique(y)
-    labels.sort()
-
-
-    # Split the data with equal class distribution in train and test sets
-    X_train, X_test, y_train, y_test = train_test_split(x, y, test_size=0.2, stratify=y, random_state=42)
-    return X_train, X_test, y_train, y_test, labels, data.columns
-
 def read_train_test_from_files(train_fn: str, test_fn: str, target: str='class'):
     train = read_csv(train_fn, index_col=None)
     trnY = train.pop(target).values
@@ -402,12 +401,12 @@ def plot_evaluation_results(model, trn_y, prd_trn, tst_y, prd_tst, labels: ndarr
 
     params_st = '' if () == model['params'] else str(model['params'])
     fig, axs = subplots(1, 2, figsize=(2 * HEIGHT, HEIGHT))
-    fig.suptitle(f'Best {model['metric']} for {model['name']} {params_st}')
+    fig.suptitle('Best {} for {} {}'.format(model['metric'], model['name'], params_st))
     plot_multibar_chart(['Train', 'Test'], evaluation, ax=axs[0], percentage=True)
 
     cnf_mtx_tst = confusion_matrix(tst_y, prd_tst, labels=labels)
     plot_confusion_matrix(cnf_mtx_tst, labels, ax=axs[1])
-    savefig(f'../../../images/{file_tag}_{model['name']}_best_{model['metric']}_eval.png')
+    savefig('images/' + file_tag + '_' + model['name'] + '_best_' + model['metric'] + '_eval.png')
     return axs
 
 def naive_Bayes_study(trnX, trnY, tstX, tstY, metric='accuracy', file_tag=''):
@@ -460,9 +459,8 @@ def knn_study(trnX, trnY, tstX, tstY, k_max=19, lag=2, metric='accuracy', file_t
                 best_params['params'] = (k, d)
                 best_model = clf
         values[d] = y_tst_values
-    print(f'KNN best with k={best_params['params'][0]} and {best_params['params'][1]}')
-
-    plot_multiple_line_chart(kvalues, values, title=f'KNN Models ({metric})', xlabel='k', ylabel=metric, percentage=True)
+    print('KNN best with k={} and {}'.format(best_params['params'][0], best_params['params'][1]))
+    plot_multiple_line_chart(kvalues, values, title='KNN Models ({})'.format(metric), xlabel='k', ylabel=metric, percentage=True)
     savefig(f'images/{file_tag}_knn_{metric}_study.png')
 
     return best_model, best_params
