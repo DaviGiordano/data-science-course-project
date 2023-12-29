@@ -108,6 +108,7 @@ def plot_line_chart(
     name: str = "",
     percentage: bool = False,
     show_stdev: bool = False,
+    color=LINE_COLOR
 ) -> Axes:
     if ax is None:
         ax = gca()
@@ -115,7 +116,8 @@ def plot_line_chart(
     ax = set_chart_xticks(xvalues, ax, percentage=percentage)
     if any(y < 0 for y in yvalues) and percentage:
             ax.set_ylim(-1.0, 1.0)
-    ax.plot(xvalues, yvalues, c=LINE_COLOR, label=name)
+    ax.plot(xvalues, yvalues, c=color, label=name)
+    ax.legend()
     if show_stdev:
         stdev: float = round(std(yvalues), 3)
         y_bottom: list[float] = [(y - stdev) for y in yvalues]
@@ -837,8 +839,8 @@ def ts_aggregation_by(
 def series_train_test_split(data: Series, trn_pct: float = 0.90) -> tuple[Series, Series]:
     trn_size: int = int(len(data) * trn_pct)
     df_cp: Series = data.copy()
-    train: Series = df_cp.iloc[:trn_size, 0]
-    test: Series = df_cp.iloc[trn_size:, 0]
+    train: Series = df_cp.iloc[:trn_size]
+    test: Series = df_cp.iloc[trn_size:]
     return train, test
 
 def dataframe_temporal_train_test_split(data: DataFrame, trn_pct: float = 0.90) -> tuple[DataFrame, DataFrame]:
@@ -901,4 +903,3 @@ def plot_forecasting_eval(trn: Series, tst: Series, prd_trn: Series, prd_tst: Se
     plot_multibar_chart(["train", "test"], ev2, ax=axs[1], title="Percentage error", percentage=True)
 
     return axs
-

@@ -1,0 +1,39 @@
+timeseries_traffic_forecast_smoothing_size_2_Total
+Mean Squared Error: 3112.246157744611
+R-squared: -0.00013818956586741926
+timeseries_traffic_forecast_smoothing_size_5_Total
+Mean Squared Error: 2722.3721708399726
+R-squared: 0.0002556882894650947
+timeseries_traffic_forecast_smoothing_size_10_Total
+Mean Squared Error: 2287.6556937144287
+R-squared: 0.0007589795291432777
+timeseries_traffic_forecast_smoothing_size_15_Total
+Mean Squared Error: 1928.9827877302375
+R-squared: 0.0011606752637643991
+timeseries_traffic_forecast_smoothing_size_20_Total
+Mean Squared Error: 1571.233333081003
+R-squared: 0.0017367467491011812
+timeseries_traffic_forecast_smoothing_size_25_Total
+Mean Squared Error: 1230.4172715901634
+R-squared: 0.0022745940419470756
+timeseries_traffic_forecast_smoothing_size_50_Total
+Mean Squared Error: 309.9721192210896
+R-squared: -0.028414807550068533
+timeseries_traffic_forecast_smoothing_size_75_Total
+Mean Squared Error: 157.48797507033808
+R-squared: -0.19576185456076267
+timeseries_traffic_forecast_smoothing_size_100_Total
+Mean Squared Error: 74.21044434243133
+R-squared: -13.76638388107463
+timeseries_traffic_forecast_smoothing_size_125_Total
+Mean Squared Error: 151.40419720401155
+R-squared: -1.9338022553441983
+timeseries_traffic_forecast_smoothing_size_150_Total
+Mean Squared Error: 178.01074076255782
+R-squared: -4.202907990049604
+timeseries_traffic_forecast_smoothing_size_175_Total
+Mean Squared Error: 211.13642231533467
+R-squared: -10.124155007624621
+timeseries_traffic_forecast_smoothing_size_200_Total
+Mean Squared Error: 265.83087885765474
+R-squared: -65.59672211104187

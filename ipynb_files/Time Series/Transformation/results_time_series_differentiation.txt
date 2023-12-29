@@ -1,0 +1,6 @@
+timeseries_traffic_forecast_differentiation_first_derivative_Total
+Mean Squared Error: 0.25645532687893013
+R-squared: -0.0014366828937009135
+timeseries_traffic_forecast_differentiation_second_derivative_Total
+Mean Squared Error: 0.24475542172819842
+R-squared: -1.0971746468912968e-05
